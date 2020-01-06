@@ -1,0 +1,4 @@
+include ':cache'
+include ':data'
+include ':presentation'
+rootProject.name = "Pokedex"
