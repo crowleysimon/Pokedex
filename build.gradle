@@ -15,11 +15,117 @@ buildscript {
     }
 }
 
+ext {
+
+    /** Android **/
+
+    minSdkVersion = 24
+    compileSdkVersion = 29
+    targetSdkVersion = 29
+    buildToolsVersion = '29.0.1'
+    versionCode = 1
+    versionName = '0.1'
+
+    /** Libraries **/
+
+    // AndroidX https://developer.android.com/jetpack/androidx/releases
+    appcompat_version = '1.1.0-rc01'
+    constraintlayout_version = '1.1.3'
+    room_version = '2.1.0'
+    lifecycle_version = '2.2.0-alpha02'
+    design_version = '1.1.0-alpha07'
+    support_v4_version = '1.0.0'
+    recyclerview_version = '1.1.0-beta01'
+    nav_version = '2.1.0-beta02'
+
+    // KTX
+    ktx_core_version = '1.0.2'
+    ktx_fragment_version = '1.2.0-alpha01'
+
+    // Javax Inject
+    javax_annotation_version = '1.0'
+    javax_inject_version = '1'
+
+    // Dagger 2 (Dependency Injection) https://github.com/google/dagger
+    dagger_version = '2.25.4'
+
+    // Leak Canary https://github.com/square/leakcanary
+    leak_canary_version = '2.1'
+
+    // Coil https://github.com/coil-kt/coil
+    coil_version = '0.9.1'
+
+    // Timber https://github.com/JakeWharton/timber
+    timber_version = '4.7.1'
+
+    // Epoxy https://github.com/airbnb/epoxy
+    epoxy_version = '3.9.0'
+
+    // MvRx https://github.com/airbnb/MvRx
+    mvrx_version = '2.0.0-alpha2'
+
+    // Coroutines https://github.com/Kotlin/kotlinx.coroutines
+    coroutines_version = '1.3.3'
+
+    /** Module Dependencies **/
+
+    //TODO: DO I NEED JAVAX DEPENDENCIES?
+
+    data_dependencies = [
+            javax_annotation: "javax.annotation:jsr250-api:$javax_annotation_version",
+            javax_inject    : "javax.inject:javax.inject:$javax_inject_version",
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            coroutines      : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    ]
+
+    cache_dependencies = [
+            javax_annotation: "javax.annotation:jsr250-api:$javax_annotation_version",
+            javax_inject    : "javax.inject:javax.inject:$javax_inject_version",
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            room_runtime    : "androidx.room:room-runtime:$room_version",
+            room_compiler   : "androidx.room:room-compiler:$room_version",
+            coroutines      : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    ]
+
+    presentation_dependencies = [
+            constraint_layout       : "androidx.constraintlayout:constraintlayout:$constraintlayout_version",
+            dagger                  : "com.google.dagger:dagger:$dagger_version",
+            dagger_compiler         : "com.google.dagger:dagger-compiler:$dagger_version",
+            dagger_android          : "com.google.dagger:dagger-android:$dagger_version",
+            dagger_android_support  : "com.google.dagger:dagger-android-support:$dagger_version",
+            dagger_android_processor: "com.google.dagger:dagger-android-processor:$dagger_version",
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            javax_annotation        : "javax.annotation:jsr250-api:$javax_annotation_version",
+            javax_inject            : "javax.inject:javax.inject:$javax_inject_version",
+            lifecycle_extensions    : "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
+            lifecycle_runtime       : "androidx.lifecycle:lifecycle-runtime:$lifecycle_version",
+            lifecycle_compiler      : "androidx.lifecycle:lifecycle-compiler:$lifecycle_version",
+            app_compat              : "androidx.appcompat:appcompat:$appcompat_version",
+            design                  : "com.google.android.material:material:$design_version",
+            support_V4              : "androidx.legacy:legacy-support-v4:$support_v4_version",
+            recyclerview            : "androidx.recyclerview:recyclerview:$recyclerview_version",
+            leak_canary             : "com.squareup.leakcanary:leakcanary-android:$leak_canary_version",
+            coil                    : "io.coil-kt:coil:$coil_version",
+            timber                  : "com.jakewharton.timber:timber:$timber_version",
+            ktx_core                : "androidx.core:core-ktx:$ktx_core_version",
+            ktx_fragment            : "androidx.fragment:fragment-ktx:$ktx_fragment_version",
+            navigation_fragment     : "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            navigation_ui           : "androidx.navigation:navigation-ui-ktx:$nav_version",
+            mvrx                    : "com.airbnb.android:mvrx:$mvrx_version",
+            epoxy                   : "com.airbnb.android:epoxy:$epoxy_version",
+            epoxy_processor         : "com.airbnb.android:epoxy-processor:$epoxy_version",
+            coroutines              : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            coroutines_android      : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    ]
+}
+
 allprojects {
     repositories {
         google()
         jcenter()
-
+        maven { url "https://jitpack.io" }
+        mavenCentral()
+        maven { url "https://kotlin.bintray.com/kotlinx" }
     }
 }
 

@@ -1,10 +1,10 @@
-apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
+    def data_dependencies = rootProject.ext.data_dependencies
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+    implementation data_dependencies.javax_annotation
+    implementation data_dependencies.javax_inject
+    implementation data_dependencies.kotlin
+    implementation cache_dependencies.coroutines
+}
