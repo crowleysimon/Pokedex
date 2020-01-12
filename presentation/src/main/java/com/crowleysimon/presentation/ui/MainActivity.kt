@@ -1,7 +1,8 @@
-package com.crowleysimon.presentation
+package com.crowleysimon.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.crowleysimon.presentation.R
 
 class MainActivity : AppCompatActivity() {
 

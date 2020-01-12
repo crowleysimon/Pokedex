@@ -7,7 +7,7 @@ buildscript {
 
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.0.0-alpha07"
+        classpath 'com.android.tools.build:gradle:4.0.0-alpha08'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -22,32 +22,32 @@ ext {
     minSdkVersion = 24
     compileSdkVersion = 29
     targetSdkVersion = 29
-    buildToolsVersion = '29.0.1'
+    buildToolsVersion = '29.0.2'
     versionCode = 1
     versionName = '0.1'
 
     /** Libraries **/
 
     // AndroidX https://developer.android.com/jetpack/androidx/releases
-    appcompat_version = '1.1.0-rc01'
-    constraintlayout_version = '1.1.3'
-    room_version = '2.1.0'
-    lifecycle_version = '2.2.0-alpha02'
-    design_version = '1.1.0-alpha07'
+    appcompat_version = '1.2.0-alpha01'
+    constraintlayout_version = '2.0.0-beta4'
+    room_version = '2.2.3'
+    lifecycle_version = '2.2.0-rc03'
+    design_version = '1.2.0-alpha03'
     support_v4_version = '1.0.0'
-    recyclerview_version = '1.1.0-beta01'
-    nav_version = '2.1.0-beta02'
+    recyclerview_version = '1.2.0-alpha01'
+    nav_version = '2.2.0-rc04'
 
     // KTX
-    ktx_core_version = '1.0.2'
-    ktx_fragment_version = '1.2.0-alpha01'
+    ktx_core_version = '1.1.0'
+    ktx_fragment_version = '1.2.0-rc04'
 
     // Javax Inject
     javax_annotation_version = '1.0'
     javax_inject_version = '1'
 
-    // Dagger 2 (Dependency Injection) https://github.com/google/dagger
-    dagger_version = '2.25.4'
+    // Koin https://insert-koin.io/
+    koin_version = '2.0.1'
 
     // Leak Canary https://github.com/square/leakcanary
     leak_canary_version = '2.1'
@@ -69,7 +69,7 @@ ext {
 
     /** Module Dependencies **/
 
-    //TODO: DO I NEED JAVAX DEPENDENCIES?
+    //TODO: Do I need javax?
 
     data_dependencies = [
             javax_annotation: "javax.annotation:jsr250-api:$javax_annotation_version",
@@ -89,11 +89,7 @@ ext {
 
     presentation_dependencies = [
             constraint_layout       : "androidx.constraintlayout:constraintlayout:$constraintlayout_version",
-            dagger                  : "com.google.dagger:dagger:$dagger_version",
-            dagger_compiler         : "com.google.dagger:dagger-compiler:$dagger_version",
-            dagger_android          : "com.google.dagger:dagger-android:$dagger_version",
-            dagger_android_support  : "com.google.dagger:dagger-android-support:$dagger_version",
-            dagger_android_processor: "com.google.dagger:dagger-android-processor:$dagger_version",
+            koin                    : "org.koin:koin-androidx-scope:$koin_version",
             kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
             javax_annotation        : "javax.annotation:jsr250-api:$javax_annotation_version",
             javax_inject            : "javax.inject:javax.inject:$javax_inject_version",

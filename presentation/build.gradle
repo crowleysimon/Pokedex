@@ -1,19 +1,22 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    androidExtensions {
+        experimental = true
+    }
 
     defaultConfig {
         applicationId "com.crowleysimon.presentation"
-        minSdkVersion 24
-        targetSdkVersion 29
-        versionCode 1
-        versionName "0.1"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
     }
 
     buildTypes {
@@ -35,14 +38,41 @@ android {
         jvmTarget = "1.8"
     }
 
+    kapt {
+        correctErrorTypes = true
+    }
+
 }
 
 dependencies {
+    implementation project(':data')
+    implementation project(':cache')
 
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.1.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    def presentation_dependencies = rootProject.ext.presentation_dependencies
+
+    implementation presentation_dependencies.constraint_layout
+    implementation presentation_dependencies.koin
+    implementation presentation_dependencies.kotlin
+    implementation presentation_dependencies.javax_annotation
+    implementation presentation_dependencies.javax_inject
+    implementation presentation_dependencies.lifecycle_extensions
+    implementation presentation_dependencies.lifecycle_runtime
+    kapt presentation_dependencies.lifecycle_compiler
+    implementation presentation_dependencies.app_compat
+    implementation presentation_dependencies.design
+    implementation presentation_dependencies.support_V4
+    implementation presentation_dependencies.recyclerview
+    implementation presentation_dependencies.timber
+    implementation presentation_dependencies.ktx_core
+    implementation presentation_dependencies.ktx_fragment
+    implementation presentation_dependencies.navigation_fragment
+    implementation presentation_dependencies.navigation_ui
+
+    implementation presentation_dependencies.coil
+    implementation presentation_dependencies.mvrx
+    implementation presentation_dependencies.epoxy
+    kapt presentation_dependencies.epoxy_processor
+    implementation presentation_dependencies.coroutines
+    implementation presentation_dependencies.coroutines_android
 
 }
