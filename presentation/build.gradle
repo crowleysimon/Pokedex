@@ -42,10 +42,17 @@ android {
         correctErrorTypes = true
     }
 
+    android {
+        packagingOptions {
+            exclude("META-INF/*.kotlin_module")
+        }
+    }
+
 }
 
 dependencies {
     implementation project(':data')
+    implementation project(':remote')
     implementation project(':cache')
 
     def presentation_dependencies = rootProject.ext.presentation_dependencies

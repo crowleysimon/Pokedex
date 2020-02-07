@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -9,6 +8,9 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -30,15 +32,15 @@ android {
 }
 
 dependencies {
+    def remote_dependencies = rootProject.ext.remote_dependencies
+
     implementation project(':data')
 
-    def cache_dependencies = rootProject.ext.cache_dependencies
-
-    implementation cache_dependencies.javax_annotation
-    implementation cache_dependencies.javax_inject
-    implementation cache_dependencies.kotlin
-    implementation cache_dependencies.room_runtime
-    implementation cache_dependencies.room_kotlin
-    kapt cache_dependencies.room_compiler
-    implementation cache_dependencies.coroutines
+    implementation remote_dependencies.kotlin
+    implementation remote_dependencies.retrofit
+    implementation remote_dependencies.retrofit_converter
+    implementation remote_dependencies.okHttp
+    implementation remote_dependencies.okHttp_logger
+    implementation remote_dependencies.moshi
+    implementation remote_dependencies.moshi_codegen
 }
