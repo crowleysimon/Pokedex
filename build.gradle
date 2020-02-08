@@ -113,6 +113,7 @@ ext {
             kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
             javax_annotation        : "javax.annotation:jsr250-api:$javax_annotation_version",
             javax_inject            : "javax.inject:javax.inject:$javax_inject_version",
+            room_runtime            : "androidx.room:room-runtime:$room_version",
             lifecycle_extensions    : "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
             lifecycle_runtime       : "androidx.lifecycle:lifecycle-runtime:$lifecycle_version",
             lifecycle_compiler      : "androidx.lifecycle:lifecycle-compiler:$lifecycle_version",
