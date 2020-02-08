@@ -62,6 +62,7 @@ dependencies {
     implementation presentation_dependencies.kotlin
     implementation presentation_dependencies.javax_annotation
     implementation presentation_dependencies.javax_inject
+    implementation presentation_dependencies.room_runtime
     implementation presentation_dependencies.lifecycle_extensions
     implementation presentation_dependencies.lifecycle_runtime
     kapt presentation_dependencies.lifecycle_compiler
