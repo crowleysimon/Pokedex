@@ -7,7 +7,19 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.crowleysimon.cache.dao.PokemonDao
 import com.crowleysimon.cache.model.AbilitiesConverter
+import com.crowleysimon.cache.model.CachedAbilityConverter
+import com.crowleysimon.cache.model.CachedItemConverter
+import com.crowleysimon.cache.model.CachedLocationAreaConverter
+import com.crowleysimon.cache.model.CachedMethodConverter
+import com.crowleysimon.cache.model.CachedMoveConverter
+import com.crowleysimon.cache.model.CachedMoveLearnMethodConverter
 import com.crowleysimon.cache.model.CachedPokemon
+import com.crowleysimon.cache.model.CachedSpeciesConverter
+import com.crowleysimon.cache.model.CachedSpritesConverter
+import com.crowleysimon.cache.model.CachedStatConverter
+import com.crowleysimon.cache.model.CachedTypeConverter
+import com.crowleysimon.cache.model.CachedVersionConverter
+import com.crowleysimon.cache.model.CachedVersionGroupConverter
 import com.crowleysimon.cache.model.ConditionValuesConverter
 import com.crowleysimon.cache.model.FormsItemConverter
 import com.crowleysimon.cache.model.GameIndicesItemConverter
@@ -36,7 +48,19 @@ import com.crowleysimon.cache.model.VersionGroupDetailsItemConverter
   FormsItemConverter::class,
   ConditionValuesConverter::class,
   VersionDetailsItemConverter::class,
-  VersionGroupDetailsItemConverter::class
+  VersionGroupDetailsItemConverter::class,
+  CachedSpritesConverter::class,
+  CachedSpeciesConverter::class,
+  CachedAbilityConverter::class,
+  CachedMethodConverter::class,
+  CachedVersionConverter::class,
+  CachedItemConverter::class,
+  CachedLocationAreaConverter::class,
+  CachedMoveConverter::class,
+  CachedStatConverter::class,
+  CachedTypeConverter::class,
+  CachedVersionGroupConverter::class,
+  CachedMoveLearnMethodConverter::class
 )
 abstract class PokeDatabase : RoomDatabase() {
 
