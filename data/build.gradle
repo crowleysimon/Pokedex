@@ -6,5 +6,6 @@ dependencies {
     implementation data_dependencies.javax_annotation
     implementation data_dependencies.javax_inject
     implementation data_dependencies.kotlin
-    implementation cache_dependencies.coroutines
+    implementation data_dependencies.coroutines
+    implementation data_dependencies.store
 }

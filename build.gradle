@@ -1,13 +1,13 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.3.61"
+    ext.kotlin_version = '1.3.72'
     repositories {
         google()
         jcenter()
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0-alpha09'
+        classpath 'com.android.tools.build:gradle:4.1.0-beta01'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -29,52 +29,55 @@ ext {
     /** Libraries **/
 
     // AndroidX https://developer.android.com/jetpack/androidx/releases
-    appcompat_version = '1.2.0-alpha02'
-    constraintlayout_version = '2.0.0-beta4'
-    room_version = '2.2.3'
+    appcompat_version = '1.3.0-alpha01'
+    constraintlayout_version = '2.0.0-beta7'
+    room_version = '2.2.5'
     lifecycle_version = '2.2.0'
-    design_version = '1.2.0-alpha04'
+    design_version = '1.3.0-alpha01'
     support_v4_version = '1.0.0'
-    recyclerview_version = '1.2.0-alpha01'
-    nav_version = '2.3.0-alpha01'
+    recyclerview_version = '1.2.0-alpha03'
+    nav_version = '2.3.0-rc01'
 
     // KTX
-    ktx_core_version = '1.2.0'
-    ktx_fragment_version = '1.2.1'
+    ktx_core_version = '1.3.0'
+    ktx_fragment_version = '1.2.5'
 
     // Javax Inject
     javax_annotation_version = '1.0'
     javax_inject_version = '1'
 
     // Koin https://insert-koin.io/
-    koin_version = '2.0.1'
+    koin_version = '2.1.6'
 
     // Leak Canary https://github.com/square/leakcanary
-    leak_canary_version = '2.2'
+    leak_canary_version = '2.4'
 
     // Coil https://github.com/coil-kt/coil
-    coil_version = '0.9.5'
+    coil_version = '0.11.0'
 
     // Timber https://github.com/JakeWharton/timber
     timber_version = '4.7.1'
 
     // Epoxy https://github.com/airbnb/epoxy
-    epoxy_version = '3.9.0'
+    epoxy_version = '3.11.0'
 
     // MvRx https://github.com/airbnb/MvRx
     mvrx_version = '2.0.0-alpha2'
 
     // Coroutines https://github.com/Kotlin/kotlinx.coroutines
-    coroutines_version = '1.3.3'
+    coroutines_version = '1.3.7'
 
     // OkHttp https://github.com/square/okhttp
-    okhttp_version = '4.3.1'
+    okhttp_version = '4.7.2'
 
     // Retrofit https://github.com/square/retrofit
-    retrofit_version = '2.7.1'
+    retrofit_version = '2.9.0'
 
     // Moshi https://github.com/square/moshi
-    moshi_version = '1.9.2'
+    moshi_version = '1.9.3'
+
+    // Store https://github.com/dropbox/Store
+    store_version = '4.0.0-alpha06'
 
     /** Module Dependencies **/
 
@@ -84,7 +87,8 @@ ext {
             javax_annotation: "javax.annotation:jsr250-api:$javax_annotation_version",
             javax_inject    : "javax.inject:javax.inject:$javax_inject_version",
             kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
-            coroutines      : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+            coroutines      : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            store           : "com.dropbox.mobile.store:store4:$store_version"
     ]
 
     cache_dependencies = [
